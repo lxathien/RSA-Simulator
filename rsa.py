@@ -50,7 +50,7 @@ def extended_gcd(a, b):
 
 # Tim nghich dao modulo
 def mod_inverse(e, phi):
-    gcd_value, x, y = extended_gcd(e, phi)
+    gcd_value, x, _ = extended_gcd(e, phi)
 
     if gcd_value != 1:
         return None
