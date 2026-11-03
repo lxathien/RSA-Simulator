@@ -2,7 +2,7 @@
 
 Website mô phỏng thuật toán RSA bằng Python.
 
-## Công nghệ sử dụng
+## 1. Công nghệ sử dụng
 
 - Python
 - Flask
@@ -10,7 +10,7 @@ Website mô phỏng thuật toán RSA bằng Python.
 - CSS
 - JavaScript
 
-## Cấu trúc project
+## 2. Cấu trúc project
 
 ```text
 RSA-Simulator/
@@ -24,21 +24,35 @@ RSA-Simulator/
 └── README.md
 ```
 
-## Cài đặt
+## 3. Cài đặt
 
-Cài Flask:
+Mở Terminal tại thư mục project và cài Flask:
 
 ```bash
-pip install flask
+python -m pip install flask
 ```
 
-## Chạy chương trình
+## 4. Chạy chương trình
+
+Chạy lệnh:
 
 ```bash
 python app.py
 ```
 
-Sau đó mở địa chỉ http://127.0.0.1:5000 trên trình duyệt.
+Sau đó mở trình duyệt và truy cập:
 
-> Đây là project học tập. Thuật toán RSA được tự cài đặt trong file `rsa.py`;
-> không sử dụng project này để bảo vệ dữ liệu thực tế.
+```text
+http://127.0.0.1:5000
+```
+
+## 5. Cách sử dụng
+
+1. Nhấn **Tạo khóa RSA** để tạo Public Key và Private Key.
+2. Nhập thông điệp vào ô thông điệp.
+3. Nhấn **Mã hóa** để tạo bản mã.
+4. Nhấn **Giải mã** để khôi phục thông điệp ban đầu.
+
+## 6. Lưu ý
+
+Đây là project phục vụ mục đích học tập. Các hàm RSA được tự cài đặt trong file `rsa.py`. Chương trình sử dụng cách mã hóa đơn giản để minh họa thuật toán, không phù hợp để bảo vệ dữ liệu thực tế.

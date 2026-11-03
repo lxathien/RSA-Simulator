@@ -7,16 +7,48 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <main class="container">
+    <div class="container">
         <h1>RSA Simulator</h1>
-        <p>Mô phỏng thuật toán mã hóa và giải mã RSA bằng Python.</p>
-        <section class="intro">
-            <h2>Giới thiệu</h2>
-            <p>Đây là website phục vụ mục đích học tập, giúp tìm hiểu cách tạo khóa,
-            mã hóa và giải mã bằng thuật toán RSA.</p>
+        <p class="description">Mô phỏng tạo khóa, mã hóa và giải mã bằng thuật toán RSA.</p>
+
+        <section class="section">
+            <h2>1. Tạo khóa</h2>
+            <button id="generateButton">Tạo khóa RSA</button>
+
+            <div class="key-list">
+                <div>
+                    <label for="publicKey">Public Key</label>
+                    <textarea id="publicKey" rows="2" readonly placeholder="Public Key sẽ hiển thị ở đây"></textarea>
+                </div>
+                <div>
+                    <label for="privateKey">Private Key</label>
+                    <textarea id="privateKey" rows="2" readonly placeholder="Private Key sẽ hiển thị ở đây"></textarea>
+                </div>
+            </div>
         </section>
-        <p class="notice">Phần chức năng sẽ được kết nối với thuật toán trong rsa.py ở bước tiếp theo.</p>
-    </main>
+
+        <section class="section">
+            <h2>2. Mã hóa</h2>
+            <label for="message">Thông điệp cần mã hóa</label>
+            <textarea id="message" rows="4" placeholder="Nhập thông điệp..."></textarea>
+            <button id="encryptButton">Mã hóa</button>
+
+            <label for="encryptedMessage">Bản mã</label>
+            <textarea id="encryptedMessage" rows="4" readonly placeholder="Kết quả mã hóa sẽ hiển thị ở đây"></textarea>
+        </section>
+
+        <section class="section">
+            <h2>3. Giải mã</h2>
+            <button id="decryptButton">Giải mã</button>
+
+            <label for="decryptedMessage">Thông điệp sau giải mã</label>
+            <textarea id="decryptedMessage" rows="4" readonly placeholder="Kết quả giải mã sẽ hiển thị ở đây"></textarea>
+        </section>
+
+        <p id="status" class="status">Vui lòng tạo khóa trước khi mã hóa.</p>
+        <p class="note">Lưu ý: Website chỉ phục vụ mục đích học tập, không dùng để bảo vệ dữ liệu thực tế.</p>
+    </div>
+
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
