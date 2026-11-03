@@ -2,14 +2,8 @@ let publicKey = null;
 let privateKey = null;
 let encryptedMessage = null;
 
-const generateButton = document.getElementById("generateButton");
-const encryptButton = document.getElementById("encryptButton");
-const decryptButton = document.getElementById("decryptButton");
-const statusText = document.getElementById("status");
-
-
 // Tao khoa RSA
-generateButton.addEventListener("click", async function () {
+document.getElementById("generateButton").addEventListener("click", async function () {
     try {
         const response = await fetch("/generate-keys", {
             method: "POST"
@@ -27,24 +21,21 @@ generateButton.addEventListener("click", async function () {
         document.getElementById("encryptedMessage").value = "";
         document.getElementById("decryptedMessage").value = "";
 
-        statusText.textContent = "Tạo khóa thành công!";
+        document.getElementById("status").textContent = "Tạo khóa thành công!";
     } catch (error) {
-        statusText.textContent = "Không thể tạo khóa. Vui lòng thử lại.";
+        document.getElementById("status").textContent = "Không thể tạo khóa. Vui lòng thử lại.";
     }
 });
 
-
 // Ma hoa thong diep
-encryptButton.addEventListener("click", async function () {
-    const message = document.getElementById("message").value;
-
+document.getElementById("encryptButton").addEventListener("click", async function () {
     if (publicKey === null) {
-        statusText.textContent = "Vui lòng tạo khóa trước!";
+        document.getElementById("status").textContent = "Vui lòng tạo khóa trước!";
         return;
     }
 
-    if (message === "") {
-        statusText.textContent = "Vui lòng nhập thông điệp cần mã hóa!";
+    if (document.getElementById("message").value === "") {
+        document.getElementById("status").textContent = "Vui lòng nhập thông điệp cần mã hóa!";
         return;
     }
 
@@ -55,7 +46,7 @@ encryptButton.addEventListener("click", async function () {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                message: message,
+                message: document.getElementById("message").value,
                 public_key: publicKey
             })
         });
@@ -63,31 +54,28 @@ encryptButton.addEventListener("click", async function () {
         const data = await response.json();
 
         if (!response.ok) {
-            statusText.textContent = data.error;
+            document.getElementById("status").textContent = data.error;
             return;
         }
 
         encryptedMessage = data.encrypted_message;
-        document.getElementById("encryptedMessage").value =
-            JSON.stringify(encryptedMessage);
-
+        document.getElementById("encryptedMessage").value = JSON.stringify(encryptedMessage);
         document.getElementById("decryptedMessage").value = "";
-        statusText.textContent = "Mã hóa thành công!";
+        document.getElementById("status").textContent = "Mã hóa thành công!";
     } catch (error) {
-        statusText.textContent = "Có lỗi xảy ra khi mã hóa.";
+        document.getElementById("status").textContent = "Có lỗi xảy ra khi mã hóa.";
     }
 });
 
-
 // Giai ma thong diep
-decryptButton.addEventListener("click", async function () {
+document.getElementById("decryptButton").addEventListener("click", async function () {
     if (privateKey === null) {
-        statusText.textContent = "Vui lòng tạo khóa trước!";
+        document.getElementById("status").textContent = "Vui lòng tạo khóa trước!";
         return;
     }
 
     if (encryptedMessage === null) {
-        statusText.textContent = "Vui lòng mã hóa thông điệp trước!";
+        document.getElementById("status").textContent = "Vui lòng mã hóa thông điệp trước!";
         return;
     }
 
@@ -106,15 +94,13 @@ decryptButton.addEventListener("click", async function () {
         const data = await response.json();
 
         if (!response.ok) {
-            statusText.textContent = data.error;
+            document.getElementById("status").textContent = data.error;
             return;
         }
 
-        document.getElementById("decryptedMessage").value =
-            data.decrypted_message;
-
-        statusText.textContent = "Giải mã thành công!";
+        document.getElementById("decryptedMessage").value = data.decrypted_message;
+        document.getElementById("status").textContent = "Giải mã thành công!";
     } catch (error) {
-        statusText.textContent = "Có lỗi xảy ra khi giải mã.";
+        document.getElementById("status").textContent = "Có lỗi xảy ra khi giải mã.";
     }
 });
