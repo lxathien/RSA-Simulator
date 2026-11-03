@@ -25,7 +25,7 @@ def is_prime(n):
     return True
 
 
-# Sinh mot so nguyen to ngau nhien trong khoang min den max
+# Sinh mot so nguyen to ngau nhien
 def generate_prime(min_value=100, max_value=500):
     while True:
         number = random.randint(min_value, max_value)
