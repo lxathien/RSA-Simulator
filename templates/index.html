@@ -8,54 +8,56 @@
 </head>
 <body class="bg-light">
     <main class="container py-4">
-        <div class="mx-auto" style="max-width: 850px;">
-            <header class="text-center mb-4">
-                <h1 class="text-primary">RSA Simulator</h1>
-                <p class="text-secondary">Mô phỏng tạo khóa, mã hóa và giải mã bằng thuật toán RSA.</p>
-            </header>
+        <div class="row">
+            <div class="col-12 col-lg-10 col-xl-9 mx-auto">
+                <header class="text-center mb-4">
+                    <h1 class="text-primary">RSA Simulator</h1>
+                    <p class="text-secondary">Mô phỏng tạo khóa, mã hóa và giải mã bằng thuật toán RSA.</p>
+                </header>
 
-            <section class="card shadow-sm mb-4">
-                <div class="card-body">
-                    <h2 class="h4 mb-3">1. Tạo khóa</h2>
-                    <button id="generateButton" class="btn btn-primary mb-3">Tạo khóa RSA</button>
+                <section class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4 mb-3">1. Tạo khóa</h2>
+                        <button id="generateButton" class="btn btn-primary mb-3">Tạo khóa RSA</button>
 
-                    <div class="row g-3">
-                        <div class="col-12 col-md-6">
-                            <label for="publicKey" class="form-label">Public Key</label>
-                            <textarea id="publicKey" class="form-control" rows="2" readonly placeholder="Public Key sẽ hiển thị ở đây"></textarea>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <label for="privateKey" class="form-label">Private Key</label>
-                            <textarea id="privateKey" class="form-control" rows="2" readonly placeholder="Private Key sẽ hiển thị ở đây"></textarea>
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <label for="publicKey" class="form-label">Public Key</label>
+                                <textarea id="publicKey" class="form-control" rows="2" readonly placeholder="Public Key sẽ hiển thị ở đây"></textarea>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="privateKey" class="form-label">Private Key</label>
+                                <textarea id="privateKey" class="form-control" rows="2" readonly placeholder="Private Key sẽ hiển thị ở đây"></textarea>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section class="card shadow-sm mb-4">
-                <div class="card-body">
-                    <h2 class="h4 mb-3">2. Mã hóa</h2>
-                    <label for="message" class="form-label">Thông điệp cần mã hóa</label>
-                    <textarea id="message" class="form-control mb-3" rows="4" placeholder="Nhập thông điệp..."></textarea>
-                    <button id="encryptButton" class="btn btn-primary mb-3">Mã hóa</button>
+                <section class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4 mb-3">2. Mã hóa</h2>
+                        <label for="message" class="form-label">Thông điệp cần mã hóa</label>
+                        <textarea id="message" class="form-control mb-3" rows="4" placeholder="Nhập thông điệp..."></textarea>
+                        <button id="encryptButton" class="btn btn-primary mb-3">Mã hóa</button>
 
-                    <label for="encryptedMessage" class="form-label">Bản mã</label>
-                    <textarea id="encryptedMessage" class="form-control" rows="4" readonly placeholder="Kết quả mã hóa sẽ hiển thị ở đây"></textarea>
-                </div>
-            </section>
+                        <label for="encryptedMessage" class="form-label">Bản mã</label>
+                        <textarea id="encryptedMessage" class="form-control" rows="4" readonly placeholder="Kết quả mã hóa sẽ hiển thị ở đây"></textarea>
+                    </div>
+                </section>
 
-            <section class="card shadow-sm mb-4">
-                <div class="card-body">
-                    <h2 class="h4 mb-3">3. Giải mã</h2>
-                    <button id="decryptButton" class="btn btn-primary mb-3">Giải mã</button>
+                <section class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="h4 mb-3">3. Giải mã</h2>
+                        <button id="decryptButton" class="btn btn-primary mb-3">Giải mã</button>
 
-                    <label for="decryptedMessage" class="form-label">Thông điệp sau giải mã</label>
-                    <textarea id="decryptedMessage" class="form-control" rows="4" readonly placeholder="Kết quả giải mã sẽ hiển thị ở đây"></textarea>
-                </div>
-            </section>
+                        <label for="decryptedMessage" class="form-label">Thông điệp sau giải mã</label>
+                        <textarea id="decryptedMessage" class="form-control" rows="4" readonly placeholder="Kết quả giải mã sẽ hiển thị ở đây"></textarea>
+                    </div>
+                </section>
 
-            <p id="status" class="alert alert-info" role="status">Vui lòng tạo khóa trước khi mã hóa.</p>
-            <p class="small text-secondary text-center">Lưu ý: Website chỉ phục vụ mục đích học tập, không dùng để bảo vệ dữ liệu thực tế.</p>
+                <p id="status" class="alert alert-info" role="status">Vui lòng tạo khóa trước khi mã hóa.</p>
+                <p class="small text-secondary text-center">Lưu ý: Website chỉ phục vụ mục đích học tập, không dùng để bảo vệ dữ liệu thực tế.</p>
+            </div>
         </div>
     </main>
 
