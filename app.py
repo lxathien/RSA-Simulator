@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, jsonify
-from rsa import generate_keys, encrypt, decrypt
+from flask import Flask, jsonify, render_template, request
+
+from rsa import decrypt, encrypt, generate_keys
 
 app = Flask(__name__)
 
