@@ -128,19 +128,3 @@ def decrypt(encrypted_message, private_key):
         decrypted += chr(decrypted_number)
 
     return decrypted
-
-
-if __name__ == "__main__":
-    public_key, private_key = generate_keys()
-
-    message = "Xin chao RSA"
-
-    print("Public Key:", public_key)
-    print("Private Key:", private_key)
-    print("Thong diep goc:", message)
-
-    encrypted_message = encrypt(message, public_key)
-    print("Thong diep da ma hoa:", encrypted_message)
-
-    decrypted_message = decrypt(encrypted_message, private_key)
-    print("Thong diep sau giai ma:", decrypted_message)
